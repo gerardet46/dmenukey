@@ -12,7 +12,7 @@ press l to lock
 instead of searching the default option. This is done with dmenu key. Just pass the key chars
 to the first item. For example, for the power script:
 ```bash
-printf "prl\npower\nreboot\nlock"
+printf "prl\npower\nreboot\nlock | dmenukey"
 ```
 will set p for poweroff, r for reboot, ... This keys can be displayed in a hint
 setting the option in `config.h` or `-h 0/1` to enable/disable this option.
@@ -32,7 +32,7 @@ Installation
 Edit config.mk to match your local setup (dmenu is installed into
 the /usr/local namespace by default).
 
-Afterwards enter the following command to build and install dmenu
+Afterwards enter the following command to build and install dmenukey
 (if necessary as root):
 
     make clean install
