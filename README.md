@@ -2,7 +2,7 @@
 ====================
 ## Usage
 dmenu is an efficient dynamic menu for X. However, for little scripts such as a
-power menu or music menu it would be usefull if do the following (for the power menu script): 
+power menu or music menu it would be usefull to do the following (for the power menu script): 
 ```
 press p to poweroff
 press r to reboot
