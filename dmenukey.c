@@ -194,30 +194,16 @@ static void
 match(void)
 {
     int i = 0;
-    struct item *item, *lprefix, *lsubstr, *prefixend, *substrend;
+    struct item *item, *lsubstr, *substrend;
 
-    matches = lprefix = lsubstr = matchend = prefixend = substrend = NULL;
+    matches = lsubstr = matchend = substrend = NULL;
     for (item = items; item && item->text; item++ && i++) {
         if (i > 0)
             appenditem(item, &lsubstr, &substrend);
     }
-    if (lprefix) {
-        if (matches) {
-            matchend->right = lprefix;
-            lprefix->left = matchend;
-        } else
-            matches = lprefix;
-        matchend = prefixend;
-    }
-    if (lsubstr) {
-        if (matches) {
-            matchend->right = lsubstr;
-            lsubstr->left = matchend;
-        } else
-            matches = lsubstr;
-        matchend = substrend;
-    }
-    curr = sel = matches;
+    matches = lsubstr;
+    matchend = substrend;
+    curr = sel = lsubstr;
     calcoffsets();
 }
 
@@ -341,7 +327,7 @@ readstdin(void)
     inputw = items ? TEXTW(items[imax].text) : 0;
     lines = MIN(lines, i);
 
-    /* set text to first item (keys definition */
+    /* set text to first item (keys definition) */
     strncpy(text, items[0].text, sizeof text - 1);
     text[sizeof text - 1] = '\0';
 
