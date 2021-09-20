@@ -15,7 +15,7 @@ to the first item. For example, for the power script:
 printf "prl\npower\nreboot\nlock" | dmenukey
 ```
 will set p for poweroff, r for reboot, ... This keys can be displayed in a hint
-setting the option in `config.h` or `-h 0/1` to enable/disable this option.
+setting the option in `config.h` or `-H 0/1` to enable/disable this option.
 
 Allowed keys are these one that doesn't require another key to put them. For example, % symbol
 is not a valid key but SPC yes. Btw, you can set a character to replace SPC in the hint to
