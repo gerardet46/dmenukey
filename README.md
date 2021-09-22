@@ -21,6 +21,13 @@ Allowed keys are these one that doesn't require another key to put them. For exa
 is not a valid key but SPC yes. Btw, you can set a character to replace SPC in the hint to
 this character to visualiza that is a space
 
+## Patches
+I include many patches in the `patches/` folder. There are not applied in the code, so if you
+want to apply them, just run
+```bash
+patch -p1 < patches/dmenukey-___.diff
+```
+
 
 Requirements
 ------------
