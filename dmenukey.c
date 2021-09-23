@@ -324,7 +324,7 @@ readstdin(void)
     }
     if (items)
         items[i].text = NULL;
-    inputw = items ? TEXTW(items[imax].text) : 0;
+    inputw = items ? TEXTW(items[0].text) : 0;
     lines = MIN(lines, i);
 
     /* set text to first item (keys definition) */
