@@ -303,8 +303,7 @@ static void
 readstdin(void)
 {
     char buf[BUFSIZ], *p;
-    size_t i, imax = 0, size = 0;
-    unsigned int tmpmax = 0;
+    size_t i, size = 0;
 
     /* read each line from stdin and add it to the item list */
     for (i = 0; fgets(buf, sizeof buf, stdin); i++) {
@@ -316,11 +315,6 @@ readstdin(void)
         if (!(items[i].text = strdup(buf)))
             die("cannot strdup %u bytes:", strlen(buf) + 1);
         items[i].out = 0;
-        drw_font_getexts(drw->fonts, buf, strlen(buf), &tmpmax, NULL);
-        if (tmpmax > inputw) {
-            inputw = tmpmax;
-            imax = i;
-        }
     }
     if (items)
         items[i].text = NULL;
